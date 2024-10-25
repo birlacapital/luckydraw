@@ -81,6 +81,12 @@ const LuckyDrawSpinWheel = () => {
       setPrizeNumber(newPrizeNumber);
       setMustSpin(true);
     }
+    else if (participants.length > 1)
+    {
+      const newPrizeNumber = Math.floor(Math.random() * (participants.length));
+      setPrizeNumber(newPrizeNumber);
+      setMustSpin(true);
+    }
   };
 
   const downloadExcel = () => {
@@ -148,7 +154,7 @@ const LuckyDrawSpinWheel = () => {
       </div>
       <button
         onClick={handleSpinClick}
-        disabled={mustSpin || participants.length === 0 || spinCount >=7 }
+        disabled={mustSpin || participants.length === 0}
         className="spin-button"
       >
         {mustSpin ? "Spinning..." : "Spin the Wheel"}
