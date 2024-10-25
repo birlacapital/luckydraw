@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/luckydraw/static/css/main.7294eadb.css",
-    "main.js": "/luckydraw/static/js/main.3833192d.js",
+    "main.css": "/luckydraw/static/css/main.d6dc1b77.css",
+    "main.js": "/luckydraw/static/js/main.735f5d2a.js",
     "static/js/453.ed3810f9.chunk.js": "/luckydraw/static/js/453.ed3810f9.chunk.js",
     "static/media/aditya-birla-logo.png": "/luckydraw/static/media/aditya-birla-logo.80896c9fca03ba1654d7.png",
     "index.html": "/luckydraw/index.html",
-    "main.7294eadb.css.map": "/luckydraw/static/css/main.7294eadb.css.map",
-    "main.3833192d.js.map": "/luckydraw/static/js/main.3833192d.js.map",
+    "main.d6dc1b77.css.map": "/luckydraw/static/css/main.d6dc1b77.css.map",
+    "main.735f5d2a.js.map": "/luckydraw/static/js/main.735f5d2a.js.map",
     "453.ed3810f9.chunk.js.map": "/luckydraw/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7294eadb.css",
-    "static/js/main.3833192d.js"
+    "static/css/main.d6dc1b77.css",
+    "static/js/main.735f5d2a.js"
   ]
 }
