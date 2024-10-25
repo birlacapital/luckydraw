@@ -11,26 +11,26 @@ const initialParticipants = [
   { name: "NITIN TRIPATHI", policy: "009510518" },
   { name: "ANUP KUMAR TIWARI", policy: "009502795" },
   { name: "JUGGI LAL VERMA", policy: "009447831" },
+  { name: "AATM PRAKASH", policy: "009444567" },
   { name: "DEVENDRA KUMAR", policy: "009431455" },
   { name: "DEVENDRA SINGH KUSHWAH", policy: "009429608" },
   { name: "GYANENDRA KUMAR", policy: "009430053" },
   { name: "SARVESH KUMAR", policy: "009430973" },
   { name: "DEVENDRA DIXIT", policy: "009411848" },
+  { name: "Pramod Yadav", policy: "009404172" },
   { name: "ARUN TRIPATHI", policy: "009342051" },
+  { name: "AMITABH PORWAL", policy: "009371335" },
   { name: "GUNJAN SHUKLA", policy: "009356908" },
   { name: "PANKAJ TRIPATHI", policy: "009358638" },
   { name: "SHALINI", policy: "009311954" },
   { name: "ABHISHEK VERMA", policy: "009315408" },
   { name: "ARJU MISHRA", policy: "009305535" },
+  { name: "UTKARSH MISHRA", policy: "009311949" },
   { name: "POORNIMA SINGH", policy: "009308182" },
+  { name: "SANJAY SINGH", policy: "009309084" },
   { name: "RAJIV KUMAR AGARWAL", policy: "009309088" },
   { name: "SUDHIR TIWARI", policy: "009301787" },
   { name: "NISHA KATIYAR", policy: "009290170" },
-  { name: "SANJAY SINGH", policy: "009309084" },
-  { name: "AATM PRAKASH", policy: "009444567" },
-  { name: "PRAMOD YADAV", policy: "009404172" },
-  { name: "AMITABH PORWAL", policy: "009371335" },
-  { name: "UTKARSH MISHRA", policy: "009311949" },
 ];
 
 const colors = [
@@ -44,8 +44,6 @@ const colors = [
   "#ff6b6b",
   "#4ecdc4",
 ];
-
-const randomIndex = (Math.floor(Math.random()*(5)+2))
 
 const LuckyDrawSpinWheel = () => {
   const [participants, setParticipants] = useState(initialParticipants);
@@ -71,13 +69,8 @@ const LuckyDrawSpinWheel = () => {
   });
 
   const handleSpinClick = () => {
-    if (spinCount < 7) { 
-      // console.log(spinCount,randomIndex);
-      var newPrizeNumber;
-      if (spinCount === 1) {newPrizeNumber = 0;}
-      else if (spinCount === randomIndex) {newPrizeNumber=participants.length-5;}
-      else if (spinCount <= randomIndex) {newPrizeNumber = Math.floor(Math.random() * (participants.length-5));}
-      else {newPrizeNumber = Math.floor(Math.random() * (participants.length-4));}
+    if (spinCount < 7) { // Check if spin count is less than 7
+      const newPrizeNumber = Math.floor(Math.random() * participants.length);
       setPrizeNumber(newPrizeNumber);
       setMustSpin(true);
     }
@@ -103,7 +96,6 @@ const LuckyDrawSpinWheel = () => {
     const updatedParticipants = participants.filter(
       (participant) => participant.name !== winner.name
     );
-    // console.log(updatedParticipants);
     setParticipants(updatedParticipants);
   };
 
@@ -116,7 +108,6 @@ const LuckyDrawSpinWheel = () => {
         alignItems: "center",
       }}
     >
-            <div className="spin-counter">Spins: {spinCount}</div>
       <img
         src={logo}
         alt="Aditya Birla Logo"
@@ -128,8 +119,7 @@ const LuckyDrawSpinWheel = () => {
           mustStartSpinning={mustSpin}
           prizeNumber={prizeNumber}
           data={data}
-          fontSize={15}
-          fontWeight={800}
+          fontSize={12}
           radiusLineWidth={2}
           backgroundColors={colors}
           textColors={["#ffffff"]}
@@ -140,7 +130,7 @@ const LuckyDrawSpinWheel = () => {
             setWinner(winnerData); // Store the winner's data
             setWinnersList((prevList) => [...prevList, winnerData]);
             removeWinnerFromParticipants(winnerData); // Remove the winner from the list
-            setSpinCount(prevCount => prevCount + 1); 
+            setSpinCount(prevCount => prevCount + 1); // Increment spin count
             setIsModalOpen(true);
           }}
           styles={{ wheel: { width: "500px", height: "500px" } }}
@@ -148,7 +138,7 @@ const LuckyDrawSpinWheel = () => {
       </div>
       <button
         onClick={handleSpinClick}
-        disabled={mustSpin || participants.length === 0 || spinCount >=7 }
+        disabled={mustSpin || participants.length === 0 || spinCount >= 7} // Disable if max spins reached
         className="spin-button"
       >
         {mustSpin ? "Spinning..." : "Spin the Wheel"}
