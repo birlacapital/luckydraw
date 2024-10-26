@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/luckydraw/static/css/main.d6dc1b77.css",
-    "main.js": "/luckydraw/static/js/main.574de958.js",
+    "main.js": "/luckydraw/static/js/main.d59e95e8.js",
     "static/js/453.ed3810f9.chunk.js": "/luckydraw/static/js/453.ed3810f9.chunk.js",
     "static/media/aditya-birla-logo.png": "/luckydraw/static/media/aditya-birla-logo.80896c9fca03ba1654d7.png",
     "index.html": "/luckydraw/index.html",
     "main.d6dc1b77.css.map": "/luckydraw/static/css/main.d6dc1b77.css.map",
-    "main.574de958.js.map": "/luckydraw/static/js/main.574de958.js.map",
+    "main.d59e95e8.js.map": "/luckydraw/static/js/main.d59e95e8.js.map",
     "453.ed3810f9.chunk.js.map": "/luckydraw/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d6dc1b77.css",
-    "static/js/main.574de958.js"
+    "static/js/main.d59e95e8.js"
   ]
 }
